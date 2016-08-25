@@ -1,10 +1,11 @@
 """
+This algorithm was invented and created by Lior Magen - cijalm@gmail.com in 2015 while I was working in Revuze.it
 
 """
 from operator import itemgetter
 
 
-def custom_collocation(sentences, win_size=5, ignore_words=None, run_bigram=True, run_trigram=True):
+def fixed_collocation(sentences, win_size=5, ignore_words=None, run_bigram=True, run_trigram=True):
     if not ignore_words:
         ignore_words = ['']
     if run_bigram:
@@ -122,3 +123,5 @@ def top_ngrams(bigram, trigram):
     z = bigram.copy()
     z.update(trigram)
     return sorted(z.items(), key=itemgetter(1), reverse=True)
+
+### TODO: Create some example how to extract products models.
