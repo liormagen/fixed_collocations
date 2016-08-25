@@ -1,6 +1,13 @@
 # README #
 
 ### What is this algorithm? ###
+Fixed collocation gets a list of sentences (list of lists), a window size. The method is as following:
+in each list there are two indexes, the first is fixed and the second moves along the sentence (starting from 2nd
+word and goes till the end of each list). For each found collocation it stores a collocation (starting with bigram
+and goes till quadgram). If there's a found bigrams (for example) "galaxy s3" and "s3 galaxy" the algorithm will
+identify them as same bigram and count it twice as "galaxy s3" if there are more "galaxy s3" appearances than
+"s3 galaxy" in lists. An optional addition to the algorithm will be to give weights to words in sentence based
+on the distance from the first word (the fixed index location).
 
 * It is based on the original collocations algorithm with a small but important different. Collocations are based on a sliding window while fixed collocations are based on a 
 fixed index and an additional sliding index. 
@@ -30,3 +37,24 @@ the product model.
 ### What if I want to use this? ###
 
 * No problem, just contact me at cijalm@gmail.com first.
+
+# Custom collocation: Gets a list of sentences (list of lists), a window size. The method is as following:
+# in each list there are two indexes, the first is fixed and the second moves along the sentence (starting from 2nd
+# word and goes till the end of each list). For each found collocation it stores a collocation (starting with bigram
+# and goes till quadgram). If there's a found bigrams (for example) "galaxy s3" and "s3 galaxy" the algorithm will
+# identify them as same bigram and count it twice as "galaxy s3" if there are more "galaxy s3" appearances than
+# "s3 galaxy" in lists. An optional addition to the algorithm will be to give weights to words in sentence based
+# on the distance from the first word (the fixed index location).
+
+# Parameters:
+# Input: sentences - list of lists containing sentences. The first word in each sentence is the word we want the index
+# to be fixed on.
+# Output:
+
+
+# example_sentence = [['galaxy', 's3', '32GB', 'white', 'beautiful', 'unlocked'], ['galaxy', '32GB', 's3',
+#                                                                                  'white', 'beautiful', 'unlocked'],
+#                     ['galaxy', 's3', '64GB'], ['galaxy',
+#                                                's3', '32GB'], ['s3', 'galaxy', '32GB'], ['galaxy', 's3', '32GB'],
+#                     ['galaxy', 's3', '32GB',
+#                      'white', 'beautiful', 'unlocked'], ['galaxy', 's3', '32GB', 'white', 'beautiful', 'unlocked']]
