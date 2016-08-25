@@ -27,4 +27,6 @@ the product model.
 		
 	Now all that left is count each n-gram and return it.
 		
-	
+### What if I want to use this? ###
+
+* No problem, just contact me at cijalm@gmail.com first.
